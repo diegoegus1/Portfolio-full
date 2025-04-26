@@ -30,3 +30,34 @@ if (window.location.search.includes('message=success')) {
     // Or create a more elegant popup notification
 }
 
+document.querySelector('form').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const form = e.target;
+  const submitBtn = form.querySelector('button[type="submit"]');
+  const originalBtnText = submitBtn.textContent;
+  
+  // Mostrar estado de carga
+  submitBtn.textContent = 'Sending...';
+  submitBtn.disabled = true;
+  
+  fetch(form.action, {
+    method: 'POST',
+    body: new FormData(form)
+  })
+  .then(response => response.json())
+  .then(data => {
+    if(data.success) {
+      window.location.href = form.querySelector('input[name="_next"]').value;
+    } else {
+      alert('Error: ' + (data.message || 'Please try again later'));
+      submitBtn.textContent = originalBtnText;
+      submitBtn.disabled = false;
+    }
+  })
+  .catch(error => {
+    alert('Error: ' + error.message);
+    submitBtn.textContent = originalBtnText;
+    submitBtn.disabled = false;
+  });
+});
+
