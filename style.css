@@ -611,3 +611,9 @@ span{
     background-color: var(--main-color);
     color: white !important;
 }
+ 
+    .contact input,
+    .contact textarea {
+        padding: 1.2rem;
+        font-size: 1.4rem;
+    }
