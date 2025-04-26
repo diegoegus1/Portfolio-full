@@ -23,3 +23,10 @@ menuIcon.onclick = () => {
     menuIcon.classList.toggle("bx-x");
     navBar.classList.toggle("active");
 }
+
+// Check for success parameter on page load
+if (window.location.search.includes('message=success')) {
+    alert('Thank you! Your message has been sent successfully.');
+    // Or create a more elegant popup notification
+}
+
