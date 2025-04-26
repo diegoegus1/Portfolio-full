@@ -113,12 +113,12 @@
 <section class="contact" id="contact">
     <h2 class="heading">Contact <span>Me</span></h2>
 
-    <form action="https://formsubmit.co/vnelprro@gmail.com" method="POST">
-        <!-- Hidden configurations -->
+   
+    <form action="https://formsubmit.co/vnelprro@gmail.com domain=https://diegoegus1.github.io/Portfolio-full/" method="POST">
         <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_subject" value="New message from your portfolio!">
         <input type="hidden" name="_template" value="table">
         <input type="hidden" name="_next" value="https://diegoegus1.github.io/Portfolio-full/thank-you.html">
+        <input type="hidden" name="_autoresponse" value="Thank you for contacting me!">
         
         <div class="input-group">
             <div class="input-box">
@@ -126,11 +126,13 @@
                 <input type="email" name="Email" placeholder="Email" required>
             </div>
             <div class="input-box">
-                <input type="tel" name="Phone" placeholder="Phone Number">
+                <input type="tel" name="Phone" placeholder="Phone">
                 <input type="text" name="Subject" placeholder="Subject">
             </div>
         </div>
-
+        <textarea name="Message" placeholder="Your message" required></textarea>
+        <button type="submit" class="btn">Send Message</button>
+ 
         <div class="input-group-2">
             <textarea name="Message" cols="30" rows="10" placeholder="Your Message" required></textarea>
             <button type="submit" class="btn">Send Message</button>
